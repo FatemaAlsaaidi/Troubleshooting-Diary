@@ -57,5 +57,9 @@ SuperAdmin.SuperAdmins = JsonSerializer.Deserialize<List<SuperAdmin>>(File.ReadA
 
 - The issue occurs because JSON deserialization uses the default constructor of SuperAdmin, which calls the User default constructor setting Role = 'Guest'. To fix this, always ensure Role is saved in the JSON file or set Role in the default constructor of SuperAdmin. With this fix, loading SuperAdmin data will correctly preserve the role and allow proper role-based login
 
+______________________________________________________________________
+
+## 2. GitHub Merge Conflict Resolution Guide Issue
+
 
 
