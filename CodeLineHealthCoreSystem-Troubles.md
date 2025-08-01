@@ -61,6 +61,7 @@ SuperAdmin.SuperAdmins = JsonSerializer.Deserialize<List<SuperAdmin>>(File.ReadA
 ## 2. GitHub Merge Conflict Resolution Guide Issue
 #### *Overview*
 - Resolve a GitHub merge conflict that occurred in the file Models/UsersMenu.cs due to modifications in the same lines of code.
+![](img/GitHubMergeConflict.png)
 #### *Conflict Markers*
 - When a conflict happens, Git adds special markers in the file to indicate the differences:
 ``` sql
