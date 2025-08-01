@@ -73,6 +73,15 @@ SuperAdmin.SuperAdmins = JsonSerializer.Deserialize<List<SuperAdmin>>(File.ReadA
 - The part between <<<<<<< master and ======= is your version.
 - The part between ======= and >>>>>>> master is the other branch version.
 
+  #### *Steps to Resolve*
+ 
+1. Open the file containing the conflict in your code editor (e.g., VS Code).
+2. Decide which code to keep:
+   - Keep your version, the other version, or combine both manually.
+3. Remove all conflict markers (<<<<<<<, =======, >>>>>>>).
+4. Save the file.
+
+
 
 
 
