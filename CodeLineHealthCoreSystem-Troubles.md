@@ -45,7 +45,7 @@ public SuperAdmin() : base()
 }
 ```
 - Saving Data to JSON File:
-``sql
+```sql
 File.WriteAllText("superadmins.json", JsonSerializer.Serialize(SuperAdmin.SuperAdmins));
 ```
 
