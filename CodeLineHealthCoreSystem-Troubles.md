@@ -81,6 +81,11 @@ SuperAdmin.SuperAdmins = JsonSerializer.Deserialize<List<SuperAdmin>>(File.ReadA
 3. Remove all conflict markers (<<<<<<<, =======, >>>>>>>).
 4. Save the file.
 
+#### *After Resolving the Conflict* 
+1. Save the file without conflict markers.
+2. Mark the conflict as resolved (in VS Code or GitHub), we resolve in Github
+3. Commit and push the changes.
+
 
 
 
