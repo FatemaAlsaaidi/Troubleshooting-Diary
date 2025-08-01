@@ -32,4 +32,9 @@ public SuperAdmin() : base()
 ``` sql
 public string Role { get; set; } = "Super Admin";
 ```
+#### *Recommended*
+1. Always include Role when saving SuperAdmin data to the JSON file using JsonSerializer.Serialize.
+2. Add Role = "Super Admin" in the default constructor of SuperAdmin as a safety net.
+
+
 
