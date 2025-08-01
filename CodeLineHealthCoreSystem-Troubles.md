@@ -86,6 +86,11 @@ SuperAdmin.SuperAdmins = JsonSerializer.Deserialize<List<SuperAdmin>>(File.ReadA
 2. Mark the conflict as resolved (in VS Code or GitHub), we resolve in Github
 3. Commit and push the changes.
 
+#### *Who Should Resolve?*
+• If you created the fork and pull request, you can resolve the conflict in your fork.
+• The admin of the original repository can also resolve the conflict manually if they have permissions.
+
+
 
 
 
