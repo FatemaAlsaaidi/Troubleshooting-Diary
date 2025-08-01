@@ -4,3 +4,9 @@
 - The SuperAdmin objects lose their Role value (Super Admin) after saving to a JSON file and loading it back. When the program reloads data, the Role property becomes 'Guest', preventing proper role-based login and causing the SuperAdmin user to be treated as a Guest.
 #### *Root Cause*
 - During JSON deserialization, the default constructor of SuperAdmin is called. This default constructor calls the base User class default constructor, which sets Role = 'Guest'. Because JSON deserialization does not use parameterized constructors, if the Role property is missing or empty in the JSON file, the Role value stays as 'Guest'.
+#### *Why This Happens*
+1. A SuperAdmin object is created using the parameterized constructor, which sets Role = 'Super Admin'.
+2. The object is saved to a JSON file.
+3. When loading, the JSON serializer calls the default constructor (not the parameterized one).
+4. The default constructor sets Role = 'Guest' (inherited from the User class).
+5. If the JSON file does not explicitly store Role or has null/empty, the value remains 'Guest'.
