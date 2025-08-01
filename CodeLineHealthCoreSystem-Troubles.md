@@ -36,5 +36,21 @@ public string Role { get; set; } = "Super Admin";
 1. Always include Role when saving SuperAdmin data to the JSON file using JsonSerializer.Serialize.
 2. Add Role = "Super Admin" in the default constructor of SuperAdmin as a safety net.
 
+#### *Code Example* 
+- Default Constructor Fix:
+```sql
+public SuperAdmin() : base()
+{
+    Role = "Super Admin"; // Ensure correct role when deserializing
+}
+```
+- Saving Data to JSON File:
+``sql
+File.WriteAllText("superadmins.json", JsonSerializer.Serialize(SuperAdmin.SuperAdmins));
+```
+- Loading Data from JSON File:
+```sql
+SuperAdmin.SuperAdmins = JsonSerializer.Deserialize<List<SuperAdmin>>(File.ReadAllText("superadmins.json"));
+```
 
 
