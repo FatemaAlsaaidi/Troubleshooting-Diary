@@ -10,3 +10,26 @@
 3. When loading, the JSON serializer calls the default constructor (not the parameterized one).
 4. The default constructor sets Role = 'Guest' (inherited from the User class).
 5. If the JSON file does not explicitly store Role or has null/empty, the value remains 'Guest'.
+
+#### *Solutions*
+- Option 1: Ensure Role is Always Saved in JSON File.
+Before saving, check and assign the correct Role value:
+```sql
+if (string.IsNullOrEmpty(superAdmin.Role))
+    superAdmin.Role = "Super Admin";
+```
+
+- Option 2: Set Role in the Default Constructor of SuperAdmin.
+```sql
+public SuperAdmin() : base()
+{
+    Role = "Super Admin";
+}
+```
+
+- Option 3: Use JSON Attributes to Always Serialize Role.
+[JsonInclude]
+``` sql
+public string Role { get; set; } = "Super Admin";
+```
+
